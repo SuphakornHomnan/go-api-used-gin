@@ -6,14 +6,11 @@ go build -ldflags "-X main.buildcommit=`git rev-parse --short HEAD` -X main.buil
 
 go install <repo@version>
 
-vegeta
+vegeta 
+ref: https://www.scaleway.com/en/docs/tutorials/load-testing-vegeta/
 
 go install github.com/tsenart/vegeta@latest
 - or -
 brew install vegeta (MacOS)
 
 echo <path> | vegeta attack -rate=10/s -duration=1s | vegeta report
-
-MariaDB image
-
-docker run -p 127.0.0.1:3306:3306 --name some-mariadb -e MARIADB_ROOT_PASSWORD=my-secret-pw -e MARIADB_DATABASE=myapp -d mariadb:latest
