@@ -1,0 +1,14 @@
+# command: restcli --show body <path>
+@baseUrl=http://localhost:8081
+# @name auth
+GET {{baseUrl}}/token 
+
+@token = {{auth.response.body.$.token}}
+
+POST {{baseUrl}}/todos
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "text": "MrLucky"
+}

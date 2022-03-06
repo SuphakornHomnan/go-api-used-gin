@@ -1,0 +1,19 @@
+Idflags
+======
+go build -ldflags "-X main.buildcommit=`git rev-parse --short HEAD` -X main.buildtime=`date "+%Y-%m-%dT%H:%M:%S%Z:00"`" -o app
+
+./app
+
+go install <repo@version>
+
+vegeta
+
+go install github.com/tsenart/vegeta@latest
+- or -
+brew install vegeta (MacOS)
+
+echo <path> | vegeta attack -rate=10/s -duration=1s | vegeta report
+
+MariaDB image
+
+docker run -p 127.0.0.1:3306:3306 --name some-mariadb -e MARIADB_ROOT_PASSWORD=my-secret-pw -e MARIADB_DATABASE=myapp -d mariadb:latest

@@ -1,0 +1,10 @@
+@baseUrl=http://localhost:8081
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJNclVua25vdyIsImV4cCI6MTY0NjU4ODA5N30.gES03yb8GVx2BlqtjW8vm0udZaQXB9rY_OxqYZBI8tY
+POST {{baseUrl}}/todos
+Content-Type: application/json
+Authorization: Bearer {{token}}
+TransactionID: x123
+
+{
+    "text": "MrJob"
+}
